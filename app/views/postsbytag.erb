@@ -1,0 +1,13 @@
+<div class="container">
+<a href ="/"><p>Anonymous Blog (beta)</p></a>
+<h1>All posts tagged '<%=@tag.category%>'</h1>
+<%unless @posts_by_tag.nil?%>
+<ol>
+<%@posts_by_tag.each do |post|%>
+<li>
+<a href ="/post/<%=post.id%>"><%= post.title.capitalize %></a> by <%=post.author%> posted at <%=post.created_at%></a>
+</li>
+ <%end%>
+</ol>
+<%end%>
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+<a href ="/"><p>Anonymous Blog (beta)</p></a>
+<h1><%= @post.title %></h1>
+<h3>Written by <i><%= @post.author%></i></h3>
+<p><%= @post.content %></p>
+<% @categories_arr.each do|tag| %>
+<a href="/tag/list/<%=tag%>" style="display: inline;"><%=tag%></a>
+  <%end%>
+<h3>Want to edit this post? Or simply remove it from the internet? Go ahead the choice is yours.</h3>
+<a href="/post/<%= @post.id%>/edit"><button>Edit</button></a>
+<a href="/post/<%= @post.id%>/delete"><button style="background-color:red">Delete</button></a>
+</div>

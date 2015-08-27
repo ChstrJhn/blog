@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Anonymous Blog (beta)</h1>
+  <h4>Read all our latest posts:</h4>
+  <ol>
+    <% @posts.each do |post|%>
+    <li>
+       <a href = "/post/<%=post.id%>"><%= post.title.capitalize %></a> by <%=post.author%> posted at <%=post.created_at%>
+    </li>
+    <%end%>
+  </ol>
+
+  <h4>Feel like writing instead? Create a post now!</h4>
+
+<form action ="/post/new" method="POST">
+  <p><b>Post Title:</b> <input name="new[title]" type="text"></p>
+ <p> <b>Your Name:</b> <input name="new[author]" type="text"></p>
+ <p><b>Content:</b></p><textarea name="new[content]" rows="10" cols="60"></textarea>
+ <h4>Which categories does your post belong to?</h4>
+ <p><input type="text" name="tag" multiple></p>
+ <input type="submit" name="Post it!">
+</form>
+
+<h4>Not sure where your post belongs? Take a look at all our tags!</h4>
+ <% @tags.each do|tag| %>
+ <a href ="/tag/list/<%=tag.category%>" style="display: inline;"><%= tag.category %></a>
+ <%end%>
+</div>
+

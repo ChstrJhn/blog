@@ -1,0 +1,6 @@
+<div class="container">
+  <a href ="/"><p>Anonymous Blog (beta)</p></a>
+ <% @tags.each do|tag| %>
+ <p><a href ="/tag/list/<%=tag.category%>"><%= tag.category %></a></p>
+ <%end%>
+</div>
